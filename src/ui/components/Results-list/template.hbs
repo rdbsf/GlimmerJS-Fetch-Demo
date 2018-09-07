@@ -1,0 +1,35 @@
+
+
+<form class="search-form" onsubmit={{action searchEnter}}>
+<input type="text" name="terms" value="" onkeyup={{action addterms}} autocomplete="off" />
+<button onclick={{action search}} id="search-btn">Search</button>
+</form>
+
+{{#if loading}}
+<div>Loading...</div>
+{{/if}}
+
+{{#if hasSearched}}
+    {{#if itunes.length }}
+    <div class="search-results">
+        <h2>Results</h2>
+    </div>
+    {{else}}
+       {{#unless loading}}
+        <div>Nothing found.</div>
+       {{/unless}}
+    {{/if}}
+{{/if}}
+
+<ul>
+{{#each itunes key="@index" as |track| }}
+<li>
+    <div>
+        {{text-limit track.artistName}} "<a href="{{track.collectionViewUrl}}&app=music&at=10lsNn" target="_blank">{{text-limit track.trackName}}</a>" (File Under: {{text-limit track.primaryGenreName}})
+    </div>
+</li>
+{{/each}}
+</ul>
+
+<a class="itunes-logo" href="https://geo.itunes.apple.com/?mt=1&app=music&at=10lsNn" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/music-lrg.svg) no-repeat;width:158px;height:45px;background-size:contain;"></a>
+

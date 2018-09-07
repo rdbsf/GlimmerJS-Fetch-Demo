@@ -1,4 +1,9 @@
-# my-app
+# iTunes store search with GlimmerJS (Ember)
+
+- Demo testing out Glimmer with fetching JSON api via text field
+
+
+## Glimmer
 
 This README outlines the details of collaborating on this Glimmer application.
 A short introduction of this app could easily go here.
