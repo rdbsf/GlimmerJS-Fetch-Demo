@@ -4,6 +4,6 @@ const { module, test } = QUnit;
 
 module('Helper: text-limit', function(hooks) {
   test('it computes', function(assert) {
-    assert.equal(textLimit([]), undefined);
+    assert.equal(textLimit(['123']), 3);
   });
 });
